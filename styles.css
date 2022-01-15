@@ -1,0 +1,351 @@
+body{
+    background:(58,58,58);
+    color: white;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+/* HEADER */
+
+}
+header {
+    background: black;
+    padding: 20px;
+    height: 300px; 
+    text-align: center;
+
+}
+
+.header2 {
+    height: 150px;
+}
+
+header a {
+    color: white;
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin-top: 40px;
+    
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+header .logo a{
+    background-image: url("images/logo.png");
+    background-size: 320px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 80px;
+    position: relative;
+    text-indent: -9999999px;
+    top: -30px;
+    width: 300px;
+  }
+
+header.introduction {
+    height: 100px;   
+}
+
+header h1{
+    font-weight: 400;
+}
+
+header h3 {
+    font-weight: 100;
+}
+
+header .mobile {
+    display: none;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/* RESPONSIVE RULES */
+
+@media screen and (max-width:552px) {
+   header .mobile {
+       display: inline-block;
+   } 
+
+   header .desktop {
+       display: none;
+   }
+}
+
+@media screen and (min-width:552px) {
+    header a {
+        margin-left: -50%;
+    }
+ }
+
+/* FEATURES */
+
+.flex-container.about{
+    color: black;
+    width: 80%;
+    height: 10px;
+    margin-left: 8.5%; 
+    padding: 20px;
+    font-size: 20px; 
+    text-align: center;
+  }
+
+  .flex-container.info {
+    color: black;
+    width: 80%;
+    height: 10px;
+    font-weight: bolder;
+    margin-left: 8.5%;
+    padding: 20px;
+    font-size: 20px; 
+    
+  }
+
+  .flex-container {
+    display: inline-table;
+    flex-direction: column;
+    background: mintcream;
+    color: black;  
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+
+  /* BUTTON */
+
+  .open-popup { /* ACTUAL BUTTON */
+      width: 100%;
+      text-align: center;
+      border: solid;
+      border-width: 3px;
+      padding: 10px 10px;
+      text-transform: uppercase;
+      display: inline-block;
+      font-size: 16px;
+      transition-duration: 0.14s;
+      background-color: mintcream;
+      letter-spacing: 1px;
+      cursor: pointer;
+  }
+
+  .open-popup:hover { /* ACTUAL BUTTON */
+      
+      background-color: mintcream;
+      border-color: mintcream;
+      box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24), 0 5px 5px 0 rgba(0,0,0,0.19);
+      
+    }
+
+    .popup{ /* OVERLAY + MODAL POPUP */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bolder;
+        visibility: hidden;
+    }
+
+    .popup-overlay { /* OVERLAY POPUP */
+        background: rgb(0, 0, 0, 0.575);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+
+    }
+
+    .main-popup { /* MODAL POPUP */
+        position: relative;
+        
+        background-color: mintcream;
+        
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-popup.animation {
+        animation: opacity .5s;
+    }
+
+    .close-popup { /* CROSS BUTTON OF MODAL FORM */
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      cursor: pointer;
+  }
+
+    @keyframes opacity {
+        0%{
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* FORM */
+
+.form { /* this is section 2 */ /*FORM*/ 
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .form-group input,
+  .form-group textarea { /* FORM ANSWERS*/
+    width: 97%;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid rgba(128, 128, 128, 0.199);
+    margin-top: 5px;
+  }
+
+  .form-group { /* FORM QUESTIONS*/
+    width: 100%;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  .container2 { /*FORM*/
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: mintcream;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  textarea { /* NO RESIZING OF MESSAGE*/
+    resize: none;
+  }
+
+  button[type="submit"] { /* SUBMIT BUTTON*/
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease background-color;
+  }
+
+  button[type="submit"]:hover { /* SUBMIT BUTTON*/
+    background-color: rgb(214, 226, 236);
+  }
+
+  #status {  /* AFTER-SUBMIT MESSAGE*/
+    width: 68%;
+    max-width: 500px;
+    text-align: center;
+    padding: 10px ;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-left: 75px;
+    margin-bottom: 20px;
+    
+  }
+
+  #status.success { /* AFTER-SUBMIT MESSAGE*/
+    background-color: rgb(211, 250, 153);
+    animation: status 4s ease forwards;
+  }
+
+  #status.error { /* AFTER-SUBMIT MESSAGE*/
+    background-color: rgb(250, 129, 92);
+    color: white;
+    animation: status 4s ease forwards;
+  }
+
+  @keyframes status {
+    0% {
+      opacity: 1;
+      pointer-events: all;
+    }
+    90% {
+      opacity: 1;
+      pointer-events: all;
+    }
+    100% {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+
+  /* THIS MAY NOT WORK - REVIEW */
+  
+  section.flex-container.info div {
+      overflow: hidden;
+      flex-wrap: wrap;
+  }
+
+
+.divider {
+    height: 30px;
+}
+
+section {
+    background-color: mintcream;
+}
+
+#grad1 {
+    background-image: linear-gradient(to right, rgb(181, 177, 177) , lightgray);
+  }
+
+  #grad2 {
+    background-image: linear-gradient(to right, lightgray , mintcream);
+  }
+
+.image1{ 
+    float: right;
+    box-shadow: lightgray 0 0 8px;
+    border: 1px solid white;
+  }
+
+/* FOOTER */
+
+footer{
+    background: black;
+    padding: 15px 20px;
+    color: lightgray;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;  
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin-left: 30px;
+
+}
+
+  
+
+
+
