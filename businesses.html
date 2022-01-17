@@ -84,12 +84,12 @@
                                   </form>
 
                                   <script>
-                                    var form = document.getElementById('sheetdb-form');
+                                    var form = document.POSTElementById('sheetdb-form');
                                     form.addEventListener("submit", e => {
                                       e.preventDefault();
                                       fetch(form.action, {
                                           method : "POST",
-                                          body: new FormData(document.getElementById("sheetdb-form")),
+                                          body: new FormData(document.POSTElementById("sheetdb-form")),
                                       }).then(
                                           response => response.json()
                                       ).then((html) => {
