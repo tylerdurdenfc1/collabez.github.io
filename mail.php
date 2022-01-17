@@ -23,7 +23,7 @@ if($contact!=NULL){
 }
 //redirect
 
-header("Location:businesses.html");
+header("Location:businesses.php?mailsend");
 
 $message_sent= true;
 }
