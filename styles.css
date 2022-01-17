@@ -34,15 +34,16 @@ a:hover {
 }
 
 header .logo a{
-    background-image: url("images/logo.png");
-    background-size: 320px;
+    background-image: url("images/real logo.png");
+    background-size: 350px;
     background-repeat: no-repeat;
     display: inline-block;
     height: 80px;
     position: relative;
     text-indent: -9999999px;
     top: -30px;
-    width: 300px;
+    width: 350px;
+    
   }
 
 header.introduction {
@@ -78,6 +79,10 @@ nav li {
    header .mobile {
        display: inline-block;
    } 
+
+   header .logo a{
+    background-size: 300px;
+    }
 
    header .desktop {
        display: none;
@@ -229,10 +234,9 @@ nav li {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 17.5px;
     background-color: mintcream;
     border-radius: 8px;
-    margin-bottom: 20px;
   }
 
   textarea { /* NO RESIZING OF MESSAGE*/
@@ -342,7 +346,6 @@ footer a {
     text-decoration: underline;
     text-transform: uppercase;
     margin-left: 30px;
-
 }
 
   

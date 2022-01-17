@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>collaborate</title>
+        <title>collabnow</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="images/icon logo.png">
 
@@ -23,7 +23,7 @@
                 <ul>
                     <li class="mobile"><a href="index.html">Home</a></li>
                     <li class="mobile"><a href="businesses.html">Businesses</a></li>
-                    <li class="logo"><a href="index.html">collaborate logo</a></li>
+                    <li class="logo"><a href="index.html">collabnow logo</a></li>
                     <li class="desktop"><a href="index.html">Home</a></li>
                     <li class="desktop"><a href="businesses.html">Businesses</a></li>
                 </ul>
@@ -57,18 +57,23 @@
                               
                                     <div class="form-group">
                                       <label name="name" for="name"> Full Name</label>
-                                      <input type="text" id="name">
+                                      <input  type="text" id="name">
                                     </div>
 
                                     <div class="form-group">
-                                        <label name="contact" for="contact">Contact (email and number*)</label>
-                                        <textarea  type="email" id="contact" cols="1" rows="2"></textarea>
+                                        <label name="info" for="info"> Business info page*</label>
+                                        <input  type="link" id="info"> 
+                                      </div>
+
+                                    <div class="form-group">
+                                        <label  name="contact" for="contact">Contact (email and number*)</label>
+                                        <textarea type="text" id="contact" rows="2"></textarea>
                                       </div>
             
                                                     
                                     <div class="form-group">
                                       <label name="task" for="task">Task required: <br> (Indicate incentive to 'experts' if any) </label>
-                                      <textarea type="text" id="task" cols="30" rows="10"></textarea>
+                                      <textarea type="text" id="task" rows="10"></textarea>
                                     </div>
 
                                     <div> 
@@ -77,6 +82,23 @@
                               
                                     <button type="submit">Submit</button>
                                   </form>
+
+                                  <script>
+                                    var form = document.getElementById('sheetdb-form');
+                                    form.addEventListener("submit", e => {
+                                      e.preventDefault();
+                                      fetch(form.action, {
+                                          method : "POST",
+                                          body: new FormData(document.getElementById("sheetdb-form")),
+                                      }).then(
+                                          response => response.json()
+                                      ).then((html) => {
+                                        // you can put any JS code here
+                                        alert('Success. Please  ')
+                                      });
+                                    });
+                                  </script>
+
                                 </div>
                                 <div id="status"></div>
                               </section>
@@ -108,7 +130,7 @@
 
         <footer> 
             
-            <div> ©2022 collaborate</div>
+            <div> ©2022 collabnow</div>
             <div><a href="index.html">Home</a></div>
             <div><a href="businesses.html">Businesses</a></div>
            
