@@ -22,7 +22,7 @@ if($email!=NULL){
 }
 //redirect
 
-header("Location:businesses.php?mailsend");
+header("Location:businesses.html");
 }
 
 ?>                              
