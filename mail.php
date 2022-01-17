@@ -1,7 +1,8 @@
 <?php
 //get data from form  
 
-if (isset($_POST['submit'])) {
+$message_sent = false;
+if (isset($_POST['task']) && $_POST['task'] != ''){
 
 $name = $_POST['name'];
 $info = $_POST['info'];
@@ -11,18 +12,20 @@ $task= $_POST['task'];
 $mailTo = "tanaynagar4@gmail.com";
 $headers = "From: ".$name;
 
-$txt ="Name = ". $name . "\r\n info = " . $info . "\r\nContact =" . $contact . "\r\nTask =" . $task;
+$txt ="name =". $name . "\r\n info = " . $info . "\r\n contact =" . $contact ." \r\n task =". $task;
 
 //$headers = "From: noreply@collabnow.com" . "\r\n" .
 
 //"CC: somebodyelse@example.com";
 
-if($email!=NULL){
+if($contact!=NULL){
     mail($to,$subject,$txt,$headers);
 }
 //redirect
 
 header("Location:businesses.html");
+
+$message_sent= true;
 }
 
 ?>                              
