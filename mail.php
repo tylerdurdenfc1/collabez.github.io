@@ -23,9 +23,26 @@ if($contact!=NULL){
 }
 //redirect
 
-header("Location:businesses.php?mailsend");
+header("Location:businesses.html?mailsend");
 
 $message_sent= true;
+    
 }
 
-?>                              
+
+?>          
+
+<?php
+    if($message_sent):
+    ?>
+
+        <h3>Thanks, we'll be in touch</h3>
+
+
+    <?php
+    else:
+    ?>
+
+<?php
+        endif;
+        ?>
