@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>collabnow</title>
+        <title>collabway</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="images/icon logo.png">
 
@@ -18,12 +18,13 @@
     </head>
       
     <body>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <header class="header2">
             <nav>
                 <ul>
                     <li class="mobile"><a href="index.html">Home</a></li>
                     <li class="mobile"><a href="businesses.html">Businesses</a></li>
-                    <li class="logo"><a href="index.html">collabnow logo</a></li>
+                    <li class="logo"><a href="index.html">collabway logo</a></li>
                     <li class="desktop"><a href="index.html">Home</a></li>
                     <li class="desktop"><a href="businesses.html">Businesses</a></li>
                 </ul>
@@ -55,7 +56,7 @@
                            
                             <section class="form">
                                 <div class="container2">
-                                  <form action="mail.php" method="POST" id="my-form">
+                                  <form action="https://form2sheet.com/api?user=tanay.collabway@gmail.com&spreadsheetId=1cA8HiPvsVsiokyuLTEFwdcO6LfB5tPLkGvTYDz0gJWc" method="POST" id="my-form">
                               
                                     <div class="form-group">
                                       <label  for="name"> Full Name</label>
@@ -64,18 +65,18 @@
 
                                     <div class="form-group">
                                         <label  for="info"> Business info page*</label>
-                                        <input name="info" type="link" id="info"> 
+                                        <input name="name" type="link" id="info"> 
                                       </div>
 
                                     <div class="form-group">
                                         <label   for="contact">Contact (email and number*)</label>
-                                        <textarea name="contact" type="text" id="contact" rows="2"></textarea>
+                                        <textarea name="email" type="text" id="contact" rows="2"></textarea>
                                       </div>
             
                                                     
                                     <div class="form-group">
                                       <label  for="task">Task required: <br> (Indicate incentive to 'experts' if any) </label>
-                                      <textarea name="task" type="text" id="task" rows="10"></textarea>
+                                      <textarea name="message" type="text" id="task" rows="10"></textarea>
                                     </div>
 
                                     <div> 
@@ -86,19 +87,19 @@
                                   </form>
 
                                   <script>
-                                    var form = document.POSTElementById('sheetdb-form');
-                                    form.addEventListener("submit", e => {
-                                      e.preventDefault();
-                                      fetch(form.action, {
-                                          method : "POST",
-                                          body: new FormData(document.POSTElementById("sheetdb-form")),
-                                      }).then(
-                                          response => response.json()
-                                      ).then((html) => {
+                                    //var form = document.GetElementById('sheetdb-form');
+                                    //form.addEventListener("submit", e => {
+                                      //e.preventDefault();
+                                      //fetch(form.action, {
+                                          //method : "POST",
+                                          //body: new FormData(document.GetElementById("sheetdb-form")),
+                                      //}).then(
+                                          //response => response.json()
+                                      //).then((html) => {
                                         // you can put any JS code here
-                                        alert('Success. Please  ')
-                                      });
-                                    });
+                                        //alert('Success. Please  ')
+                                      //});
+                                    //});
                                   </script>
 
                                 </div>
@@ -132,7 +133,7 @@
 
         <footer> 
             
-            <div> ©2022 collabnow</div>
+            <div> ©2022 collabway</div>
             <div><a href="index.html">Home</a></div>
             <div><a href="businesses.html">Businesses</a></div>
            
