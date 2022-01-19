@@ -14,7 +14,7 @@ $headers = "From: ".$name;
 
 $txt ="name =". $name . "\r\n info = " . $info . "\r\n contact =" . $contact ." \r\n task =". $task;
 
-//$headers = "From: noreply@collabnow.com" . "\r\n" .
+//$headers = "From: noreply@collabway.com" . "\r\n" .
 
 //"CC: somebodyelse@example.com";
 

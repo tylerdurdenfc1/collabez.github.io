@@ -34,7 +34,7 @@ a:hover {
 }
 
 header .logo a{
-    background-image: url("images/real logo (2).png");
+    background-image: url("images/real logo (3).png");
     background-size: 360px;
     background-repeat: no-repeat;
     display: inline-block;
@@ -94,6 +94,20 @@ nav li {
         margin-left: -50%;
     }
  }
+
+ @media screen and (max-width:710px) {
+  .image1 {
+      width: 100%;
+      
+  }
+}
+
+
+.box1 {
+  
+  width: 100%;
+ 
+}
 
 /* FEATURES */
 
@@ -328,6 +342,8 @@ section {
     float: right;
     box-shadow: lightgray 0 0 8px;
     border: 1px solid white;
+    margin-left: 20px;
+    margin-bottom: 10px;
   }
 
 /* FOOTER */
