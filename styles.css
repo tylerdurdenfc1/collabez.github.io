@@ -227,7 +227,7 @@ nav li {
 
 .form { /* this is section 2 */ /*FORM*/ 
     height: 100%;
-    width: 100%;
+    width: 93%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,7 +253,7 @@ nav li {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
-    padding: 17.5px;
+    padding: 7px;
     background-color: mintcream;
     border-radius: 8px;
   }
