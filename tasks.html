@@ -59,56 +59,39 @@
                            
                             <section id="form" class="form">
                                 <div class="container2">
-                                  <form action="https://form2sheet.com/api?user=tanay.collabez@gmail.com&spreadsheetId=1CyGt5S0Hl6ZhapbUpLXciqCzVlbD9m0TLjWql9Vd2zg" method="POST" id="my-form">
+                                  <form method="POST" id="my-form">
                               
                                     <div class="form-group">
-                                      <label  for="name"> Full Name</label>
-                                      <input name="name" type="text" id="name">
+                                      <label  for="name"> Full name</label>
+                                      <input name="name" type="text" id="name" required>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label   for="email">Email and mobile number*</label>
+                                        <textarea name="email" type="text" id="email" rows="2" required></textarea>
+                                      </div>
+            
 
                                     <div class="form-group">
                                         <label  for="info"> Business info page*</label>
                                         <input name="name" type="link" id="info"> 
                                       </div>
 
-                                    <div class="form-group">
-                                        <label   for="email">Email</label>
-                                        <textarea name="email" type="text" id="email" rows="2"></textarea>
-                                      </div>
-            
+                                  
                                                     
                                     <div class="form-group">
                                       <label  for="task">Task required: <br> (Indicate incentive to 'experts') </label>
-                                      <textarea name="message" type="text" id="task" rows="10"></textarea>
+                                      <textarea name="message" type="text" id="task" rows="10" required></textarea>
                                     </div>
 
                                     <div> 
                                         * - optional <br>
-                                        <u>One time</u> fee of AUD$3.99 is sent by email within 24hrs
+                                       
                                         
                                     </div>
                               
-                                    <button id="btn2" type="submit">Submit</button>
+                                    <button id="btn2" type="submit">Pay</button>
                                   </form>
-
-
-
-                                  
-                                  <script>
-                                    //var form = document.GetElementById('sheetdb-form');
-                                    //form.addEventListener("submit", e => {
-                                      //e.preventDefault();
-                                      //fetch(form.action, {
-                                          //method : "POST",
-                                          //body: new FormData(document.GetElementById("sheetdb-form")),
-                                      //}).then(
-                                          //response => response.json()
-                                      //).then((html) => {
-                                        // you can put any JS code here
-                                        //alert('Success. Please  ')
-                                      //});
-                                    //});
-                                  </script>
 
                                 </div>
                                 <div id="status"></div>
@@ -127,7 +110,8 @@
 
         <section class="flex-container info">
             <div>  
-                hello
+                hello Earth
+                
             </div>
            
         </section>

@@ -249,6 +249,10 @@ nav li {
     font-size: 18px;
   }
 
+  .form-group2 {
+    left: 500px;
+  }
+
   .container2 { /*FORM*/
     width: 100%;
     max-width: 500px;
