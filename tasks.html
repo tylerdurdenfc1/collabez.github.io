@@ -6,6 +6,8 @@
         <link rel="icon" href="images/icon logo.png">
 
     <script src="jquery/jquery.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    
     <script>            
         $(function() {
 
@@ -59,7 +61,7 @@
                            
                             <section id="form" class="form">
                                 <div class="container2">
-                                  <form  method="POST" id="my-form">
+                                  <form method="POST" id="my-form" action="https://checkout.stripe.com/pay/ppage_1KOLcBEnxayyKJ7E6IWm2duB#fidkdWxOYHwnPyd1blpxYHZxWjA0TkhrVkZAa31kfHxOTzJATWNjd2Bgdl9vSjZuaXZ0YX80NH1wUkA1YzRBVHVVf1BUTGQyMzV8QT1wSU9zbXdmUDVQbW9KMEN1XGpufG8wUkN3cHdzUGx3NTVBbHxDQ2RCMCcpJ2hsYXYnP34nYnBsYSc%2FJzBmNmFgZz0yKGFmNDAoMTIyNihnMjAyKDBnYGc1YDcxYD0zMjYxMjFnYScpJ2hwbGEnPyc0YzA8MDIzNig9YGY9KDFmMWQoZzBjNCg0NmM1YWQ2YzxnMGE0NzZhZj0nKSd2bGEnPyc9ZGdhZDA2PCg8PGY9KDExZjEoPWBhNCgyNGQ9PTVkZz0yMTExNWBgYTMneCknZ2BxZHYnP15YKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSd3YGNgd3dgd0p3bGJsayc%2FJ21xcXU%2FKio0NzIrNSs1KzQ%2FMDA1NScpJ2lqZmRpYCc%2Fa3BpaXgl">
                               
                                     <div class="form-group">
                                       <label  for="name"> Full name</label>
@@ -85,14 +87,59 @@
                                     </div>
 
                                     <div> 
-                                        * - optional <br>
-                                       
-                                        
+                                        * - optional <br> 
                                     </div>
+                                     
+                                    <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+                                    <button
+                                    type="submit"
+                                    id="checkout-button-price_1KNVM0EnxayyKJ7ERV1xnI6X"
+                                    role="link"
+                                    type="button"
+                                    >
+                                    Pay
+                                    </button>
 
-                                    <a href="https://buy.stripe.com/test_4gw7vi5NtbmBgkobII">
-                                    <button id="btn2" type="submit">Pay</button>
-                                    </a>
+                                    <div id="error-message"></div>
+
+                                    <script>
+                                    (function() {
+                                    var stripe = Stripe('pk_test_51KMnSCEnxayyKJ7EHffreesZjO3klsqdz11xuWE0f1DQpPzUQIa760yD8uLJvhrcU0UhjO5FpYokyj5WFrurvUir00DiyFFaG5');
+
+                                    var checkoutButton = document.getElementById('checkout-button-price_1KNVM0EnxayyKJ7ERV1xnI6X');
+                                    checkoutButton.addEventListener('click', function () {
+                                    /*
+                                    * When the customer clicks on the button, redirect
+                                    * them to Checkout.
+                                    */
+                                    stripe.redirectToCheckout({
+                                        lineItems: [{price: 'price_1KNVM0EnxayyKJ7ERV1xnI6X', quantity: 1}],
+                                        mode: 'payment',
+                                        /*
+                                        * Do not rely on the redirect to the successUrl for fulfilling
+                                        * purchases, customers may not always reach the success_url after
+                                        * a successful payment.
+                                        * Instead use one of the strategies described in
+                                        * https://stripe.com/docs/payments/checkout/fulfill-orders
+                                        */
+                                        successUrl: window.location.protocol + '//www.collabez.online/success',
+                                        cancelUrl: window.location.protocol + '//www.collabez.online/cancel',
+                                    })
+                                    .then(function (result) {
+                                        if (result.error) {
+                                        /*
+                                        * If `redirectToCheckout` fails due to a browser or network
+                                        * error, display the localized error message to your customer.
+                                        */
+                                        var displayError = document.getElementById('error-message');
+                                        displayError.textContent = result.error.message;
+                                        }
+                                    });
+                                    });
+                                    })();
+                                    </script>
+
+                                    
                                   </form>
 
                                 </div>
@@ -112,8 +159,6 @@
 
         <section class="flex-container info">
             <div>  
-                hello Earth
-                
             </div>
            
         </section>
