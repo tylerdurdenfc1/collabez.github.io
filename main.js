@@ -13,14 +13,14 @@ $(function (){
 
     $.ajax({
         type: 'GET',
-        url: 'orders.json',
+        url: '/api/orders',
         success: function(orders) {
             $.each(orders, function(i, order) {
                 addOrder(order);
         });
       },
       error: function(){
-          alert('error loading errors');
+          alert('error loading');
       }
     });
 
@@ -35,7 +35,7 @@ $(function (){
 
         $.ajax({
             type: 'POST',
-            url: 'orders.json',
+            url: '/api/orders',
             data: order, 
             success: function(newOrder) {
                 addOrder(newOrder);
