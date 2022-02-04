@@ -7,6 +7,8 @@
 
     <script src="jquery/jquery.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="./main.js"></script>
+        
     
     <script>            
         $(function() {
@@ -69,8 +71,8 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label   for="email">Email and mobile number*</label>
-                                        <textarea name="email" type="text" id="email" rows="2" required></textarea>
+                                        <label   for="contact">Email and mobile number*</label>
+                                        <textarea name="contact" type="text" id="contact" rows="2" required></textarea>
                                       </div>
             
 
@@ -88,6 +90,7 @@
 
                                     <div> 
                                         * - optional <br> 
+                                        tasks are posted once paid
                                     </div>
                                      
                                     <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
@@ -96,9 +99,10 @@
                                     id="checkout-button-price_1KNVM0EnxayyKJ7ERV1xnI6X"
                                     role="link"
                                     type="button"
-                                    onclick="window.location.href = 'https://buy.stripe.com/test_4gw7vi5NtbmBgkobII';"
+                                    onclick="window.location.href = 'https://buy.stripe.com/28o03M1mH2wA5nWeUU';"
+                                    
                                     >
-                                    Pay
+                                    Pay & Post
                                     </button>
 
                                     <div id="error-message"></div>
@@ -113,6 +117,8 @@
                                     * When the customer clicks on the button, redirect
                                     * them to Checkout.
                                     */
+                                        
+                                    
                                     stripe.redirectToCheckout({
                                         lineItems: [{price: 'price_1KNVM0EnxayyKJ7ERV1xnI6X', quantity: 1}],
                                         mode: 'payment',
@@ -123,9 +129,10 @@
                                         * Instead use one of the strategies described in
                                         * https://stripe.com/docs/payments/checkout/fulfill-orders
                                         */
-                                        successUrl: window.location.protocol + '//www.collabez.online/success',
-                                        cancelUrl: window.location.protocol + '//www.collabez.online/cancel',
+                                        successUrl: window.location.protocol + 'https://www.collabez.online/success',
+                                        cancelUrl: window.location.protocol + 'https://www.collabez.online/cancel',
                                     })
+                                    
                                     .then(function (result) {
                                         if (result.error) {
                                         /*
@@ -135,9 +142,11 @@
                                         var displayError = document.getElementById('error-message');
                                         displayError.textContent = result.error.message;
                                         }
-                                    });
+                                    }); 
                                     });
                                     })();
+
+                                    
                                     </script>
 
                                     
@@ -160,8 +169,9 @@
 
         <section class="flex-container info">
             <div>  
+                <b> Recent Tasks: </b>
+                <ul id="orders"></ul>
             </div>
-           
         </section>
 
         <section class="flex-container info">
@@ -181,6 +191,8 @@
             <div><a href="tasks.html">Tasks</a></div>
            
         </footer>
+
+        
         
     </body>
 
