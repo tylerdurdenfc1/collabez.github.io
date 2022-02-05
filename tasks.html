@@ -6,10 +6,12 @@
         <link rel="icon" href="images/icon logo.png">
 
     <script src="jquery/jquery.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./main.js"></script>
+        
+    
     <script>            
         $(function() {
-
-            $('#btn1').html('Add your task');
 
             $('#btn2').on('click', function() {
                 $('#form').slidetoggle(200);
@@ -47,7 +49,7 @@
         <section>
             <div>
                 <div>   
-                    <button id="btn1" class="open-popup">Add your business here</button>      
+                    <button id="btn1" class="open-popup">ADD YOUR TASK</button>      
                 </div>
                 <div class="popup">
                     <div class="popup-overlay"></div>
@@ -59,7 +61,7 @@
                            
                             <section id="form" class="form">
                                 <div class="container2">
-                                  <form method="POST" id="my-form">
+                                  <form method="POST" id="my-form" target="_blank" action="https://buy.stripe.com/test_4gw7vi5NtbmBgkobII">
                               
                                     <div class="form-group">
                                       <label  for="name"> Full name</label>
@@ -67,8 +69,8 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label   for="email">Email and mobile number*</label>
-                                        <textarea name="email" type="text" id="email" rows="2" required></textarea>
+                                        <label   for="contact">Email and mobile number*</label>
+                                        <textarea name="contact" type="text" id="contact" rows="2" required></textarea>
                                       </div>
             
 
@@ -85,12 +87,67 @@
                                     </div>
 
                                     <div> 
-                                        * - optional <br>
-                                       
-                                        
+                                        * - optional <br> 
+                                        tasks are posted once paid
                                     </div>
-                              
-                                    <button id="btn2" type="submit"><a href="checkout.html">Pay</a></button>
+                                     
+                                    <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+                                    <button
+                                    type="submit"
+                                    id="checkout-button-price_1KNVM0EnxayyKJ7ERV1xnI6X"
+                                    role="link"
+                                    type="button"
+                                    onclick="window.location.href = 'https://buy.stripe.com/28o03M1mH2wA5nWeUU';"
+                                    
+                                    >
+                                    Pay & Post
+                                    </button>
+
+                                    <div id="error-message"></div>
+
+                                    <script>
+                                    (function() {
+                                    var stripe = Stripe('pk_test_51KMnSCEnxayyKJ7EHffreesZjO3klsqdz11xuWE0f1DQpPzUQIa760yD8uLJvhrcU0UhjO5FpYokyj5WFrurvUir00DiyFFaG5');
+
+                                    var checkoutButton = document.getElementById('checkout-button-price_1KNVM0EnxayyKJ7ERV1xnI6X');
+                                    checkoutButton.addEventListener('click', function () {
+                                    /*
+                                    * When the customer clicks on the button, redirect
+                                    * them to Checkout.
+                                    */
+                                        
+                                    
+                                    stripe.redirectToCheckout({
+                                        lineItems: [{price: 'price_1KNVM0EnxayyKJ7ERV1xnI6X', quantity: 1}],
+                                        mode: 'payment',
+                                        /*
+                                        * Do not rely on the redirect to the successUrl for fulfilling
+                                        * purchases, customers may not always reach the success_url after
+                                        * a successful payment.
+                                        * Instead use one of the strategies described in
+                                        * https://stripe.com/docs/payments/checkout/fulfill-orders
+                                        */
+                                        successUrl: window.location.protocol + 'https://www.collabez.online/success',
+                                        cancelUrl: window.location.protocol + 'https://www.collabez.online/cancel',
+                                    })
+                                    
+                                    .then(function (result) {
+                                        if (result.error) {
+                                        /*
+                                        * If `redirectToCheckout` fails due to a browser or network
+                                        * error, display the localized error message to your customer.
+                                        */
+                                        var displayError = document.getElementById('error-message');
+                                        displayError.textContent = result.error.message;
+                                        }
+                                    }); 
+                                    });
+                                    })();
+
+                                    
+                                    </script>
+
+                                    
                                   </form>
 
                                 </div>
@@ -101,7 +158,7 @@
                     </div>
                 </div>
             </div>
-            <script src="./app.js"></script>
+            <script src="./happy.js"></script>
         </section>
        
         <section class="divider">
@@ -110,10 +167,9 @@
 
         <section class="flex-container info">
             <div>  
-                hello Earth
-                
+                <b> Recent Tasks: </b>
+                <ul id="orders"></ul>
             </div>
-           
         </section>
 
         <section class="flex-container info">
@@ -133,6 +189,8 @@
             <div><a href="tasks.html">Tasks</a></div>
            
         </footer>
+
+        
         
     </body>
 
