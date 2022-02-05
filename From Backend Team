@@ -1,0 +1,61 @@
+From Backend Team
+
+API
+
+-------------------------------------
+Get ALL Orders
+
+GET request to /api/orders
+Sample Response:
+[
+    {
+        id: 1,
+        name: 'James John ',
+        contact: 'a@gmail.com, 0455 505 050',
+        info: 'www.business.com',
+        task: 'need help with packing ..'
+    },
+    {
+        id: 2,
+        name: 'John James',
+        contact: 'a@gmail.com, 0455 505 050',
+        info: 'www.business.com',
+        task: 'need help with ordering ..'
+    },
+]
+----------------------------------
+Add an Order 
+
+POST request to /api/orders 
+Type: JSON
+
+Sample Post:
+{
+    name: 'John James',
+    contact: 'a@gmail.com, 0455 505 050',
+    info: 'www.business.com',
+    task: 'need help with ordering ..',
+}
+
+Sample Response:
+{
+    id: 3,
+    name: 'John James',
+    contact: 'a@gmail.com, 0455 505 050',
+    info: 'www.business.com',
+    task: 'need help with ordering ..',
+}
+---------------------------------
+Update an Order 
+
+PUT request to /api/orders/{id}
+
+Sample Post:
+{
+    id:1,
+    name: 'John James',
+    contact: 'a@gmail.com, 0455 505 050',
+    info: 'www.business.com',
+    task: 'need help with ordering ..',
+}
+
