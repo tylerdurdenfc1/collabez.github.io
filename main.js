@@ -24,7 +24,7 @@ $(function (){
       }
     });
 
-    $('#"checkout-button-price_1KNVM0EnxayyKJ7ERV1xnI6X"').on('click', function() {
+    $('#checkout-button-price_1KNVM0EnxayyKJ7ERV1xnI6X').on('click', function() {
 
         var order = {
             name: $name.val(),

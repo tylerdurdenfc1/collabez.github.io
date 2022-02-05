@@ -3,23 +3,23 @@ From Backend Team
 API
 
 -------------------------------------
-Get all orders
+Get ALL Orders
 
 GET request to /api/orders
 Sample Response:
 [
     {
-        id:1
-        name: 'James John '
-        contact: 'a@gmail.com, 0455 505 050'
-        info: 'www.business.com'
+        id: 1,
+        name: 'James John ',
+        contact: 'a@gmail.com, 0455 505 050',
+        info: 'www.business.com',
         task: 'need help with packing ..'
     },
     {
-        id:2
-        name: 'John James'
-        contact: 'a@gmail.com, 0455 505 050'
-        info: 'www.business.com'
+        id: 2,
+        name: 'John James',
+        contact: 'a@gmail.com, 0455 505 050',
+        info: 'www.business.com',
         task: 'need help with ordering ..'
     },
 ]
