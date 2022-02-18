@@ -9,7 +9,19 @@ $(function (){
     function addOrder(order) {
         $orders.append('<li>Name: '+ order.name +', Contact: '+ order.contact +', Info: '+ order.info +', Task: '+order.task +'</li>');
     }
-
+  
+    $.ajax({
+        type: 'GET',
+        url: 'orders.json', 
+        success: function(orders) {
+            $.each(orders, function(i, order) {
+                addOrder(order);
+            });
+        },
+        error: function () {
+            alert('error saving orders');
+        }
+    });
    
     $('#checkout-button-price_1KNVM0EnxayyKJ7ERV1xnI6X').on('click', function() {
 
@@ -22,7 +34,7 @@ $(function (){
 
         $.ajax({
             type: 'POST',
-            url: 'https://webhook.site/7b4db931-e34a-40ae-85bd-ddbdd2279df2',
+            url: 'orders.json',
             data: order, 
             success: function(newOrder) {
                 addOrder(newOrder);
@@ -32,6 +44,5 @@ $(function (){
             }
         });
     });
-
 });
 

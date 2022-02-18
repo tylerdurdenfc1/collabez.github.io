@@ -5,20 +5,9 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="images/icon logo.png">
 
-    <script src="jquery/jquery.js"></script>
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="./main.js"></script>
-        
+            
     
-    <script>            
-        $(function() {
-
-            $('#btn2').on('click', function() {
-                $('#form').slidetoggle(200);
-            }); 
-
-        });
-    </script>
+    
     
     </head>
       
@@ -98,7 +87,7 @@
                                     role="link"
                                     type="button"
                                     onclick="window.location.href = 'https://buy.stripe.com/28o03M1mH2wA5nWeUU';"
-                                    
+                                    onclick="myfunction()"
                                     >
                                     Pay & Post
                                     </button>
@@ -158,7 +147,7 @@
                     </div>
                 </div>
             </div>
-            <script src="./happy.js"></script>
+            
         </section>
        
         <section class="divider">
@@ -169,6 +158,18 @@
             <div>  
                 <b> Recent Tasks: </b>
                 <ul id="orders"></ul>
+                <script>
+                    function myFunction () {
+                        var $orders = $('#orders');
+                        var $name = $('#name');
+                        var $contact = $('#contact');
+                        var $info = $('#info');
+                        var $task = $('#task');
+                        $orders.append('<li>Name: '+ order.name +', Contact: '+ order.contact +', Info: '+ order.info +', Task: '+order.task +'</li>');
+    
+                        document.getElementById("orders").innerHTML = $orders;
+                    }
+                </script>
             </div>
         </section>
 
@@ -190,7 +191,20 @@
            
         </footer>
 
-        
+    <script>            
+        $(function() {
+
+            $('#btn2').on('click', function() {
+                $('#form').slidetoggle(200);
+            }); 
+
+        });
+    </script>
+
+    <script src="jquery/jquery.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./main.js"></script>
+    <script src="./happy.js"></script>
         
     </body>
 
