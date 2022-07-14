@@ -4,14 +4,14 @@ $(function (){
     var $name = $('#name');
     var $contact = $('#contact');
     var $info = $('#info'); 
-    var $task = $('#task');
+    var $idea = $('#idea');
 
-    function addOrder(order) {
-        $orders.append('<li>Name: '+ order.name +', Contact: '+ order.contact +', Info: '+ order.info +', Task: '+order.task +'</li>');
+    function addOrder(order) { //DRY the code up with this 
+        $orders.append('<li>Name: '+ order.name +', Contact: '+ order.contact +', Info: '+ order.info +', Idea: '+order.idea +'</li>');
     }
   
     $.ajax({
-        type: 'GET',
+        type: 'GET', 
         url: 'orders.json', //where the information is coming from 
         success: function(orders) {
             $.each(orders, function(i, order) {
@@ -23,16 +23,16 @@ $(function (){
         }
     });
    
-    $('#checkout-button-price_1KNVM0EnxayyKJ7ERV1xnI6X').on('click', function() { //button id is chekout-button.... and we want so on click of that make a post
+    $('#checkout-button-price_1KNVhSEnxayyKJ7EtFayYlkf').on('click', function() { //button id is chekout-button.... and we want so on click of that make a post
 // below are the ids of the fields 
         var order = {
             name: $name.val(),
             contact: $contact.val(),
             info: $info.val(),
-            task: $task.val(),
+            idea: $idea.val(),
         };
 
-        $.ajax({
+        $.ajax({ //post new order to backend - wait for to be successfull - then add new <li> to list on page
             type: 'POST',
             url: 'orders.json',
             data: order, 

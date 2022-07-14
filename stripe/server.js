@@ -12,7 +12,7 @@ app.post('/create-checkout-session', async (req, res) => {
     line_items: [
       {
         // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: 'price_1KNVM0EnxayyKJ7ERV1xnI6X',
+        price: 'price_1KNVhSEnxayyKJ7EtFayYlkf', 
         quantity: 1,
       },
     ],
@@ -25,3 +25,4 @@ app.post('/create-checkout-session', async (req, res) => {
 });
 
 app.listen(4242, () => console.log('Running on port 4242'));
+
