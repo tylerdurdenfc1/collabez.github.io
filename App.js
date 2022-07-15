@@ -19,7 +19,7 @@ export default class App extends React.Component {
                     name: 'John Cain',
                     contact: '1@gmail.com, 0455 555 555',   
                     info: 'www.a.com',
-                    task: 'blah do this and that'
+                    idea: 'blah do this and that'
                 })
             });
         } catch (e) {
