@@ -38,9 +38,9 @@ $(function (){
             data: order, 
             success: function(newOrder) {
                 addOrder(newOrder);
-            },
+            /* BELOW KEEPS GIVING ERROR SAVING ORDER MESSAGE WE DON'T WANT AFTER EACH FORM SUBMISSION},
             error: function () {
-                alert('error saving order');
+                alert('error saving order'); */
             }
         });
     });
